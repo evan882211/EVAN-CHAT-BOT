@@ -143,12 +143,12 @@ module.exports.run = async function({ api, event }) {
     .pipe(fs.createWriteStream(path))
     .on("close", () => {
       api.sendMessage({
-        body: "পাপির দল 😤 হাত মারবি না কিন্তু 🥵🫵",
+        body: "--হেন্ডেল মারিছ না এনার্জি কমে যাবে কিন্তু:-🙂🧸",
         attachment: fs.createReadStream(path)
       }, event.threadID, () => fs.unlinkSync(path));
     })
     .on("error", (err) => {
       console.error("Error downloading video:", err);
-      api.sendMessage("Bokasoda video Dawonlod korte pari nai🤧\nPlease aktu por hat mara🥵.", event.threadID);
+      api.sendMessage("Bokasoda video Dawonlod korte pari nai🤧\nPlease aktu por hat mar🥵.", event.threadID);
     });
 };
